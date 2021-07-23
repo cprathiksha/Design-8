@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design 8</title>
+<style>
+
+body {
+ 
+  background-image: url(house.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:whitesmoke;
+}
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.openBtn {
+  background: rgb(44, 41, 71);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.openBtn:hover {
+  background: #000;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
+h6{
+    font-size:28px;
+    line-height: .2px;
+    color: rgb(44, 41, 71);
+
+}
+.searchbox{
+    border-radius: 20px;
+}
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: url(house.svg);
+  }
+  
+  h6{
+    font-size:24px;
+    line-height: .2px;
+  }
+}
+.container{
+    height: 15vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-width: 1px;
+    border-color: rgb(59, 33, 70);
+    border-style: solid;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: relative;
+    background-color:rgb(198, 190, 201) ;
+    position: absolute;
+    bottom: 0px;
+}
+.navbar{
+    width: 80%;
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+nav{
+    flex: 1;
+    padding-right: 30px;
+   
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 10px;
+    float: right;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: flex;
+    color: rgb(37, 5, 56);
+}
+</style>
+
+</head>
+<body class="element">
+
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+        <div class="overlay-content">
+          <form action=post>
+            <input type="text" class="searchbox" placeholder="Search here.." name="search">
+            <button  class="searchbox" type="submit"><i class="fa fa-search"></i>GO</button>
+          </form>
+        </div>
+      </div>
+     
+      <h6>Looking for House</h6>
+      <h6>Here you go.. </h6>
+      <button class="openBtn" onclick="openSearch()">Search for the best!</button>
+      <div class="container">
+        <div class="navbar">
+            <h4 class="logo">Logo</h4>
+            <nav>
+                <ul>
+                    <li><a class="menu" href=""> Help</a></li>
+                    <li><a class="menu" href=""> About</a></li>
+                </ul>
+            </nav> 
+        </div>
+      </div>
+      <script>
+      function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+      }
+      
+      function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+      }
+      </script>
+           
+           
+</body>
+</html>
